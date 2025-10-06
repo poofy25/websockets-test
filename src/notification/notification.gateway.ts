@@ -14,7 +14,9 @@ export class NotificationGateway {
     console.log('Client disconnected', client.id);
   }
 
-  broadcastNotification(notification: NotificationTriggerDto & { id: string }) {
+  broadcastNotification(
+    notification: NotificationTriggerDto & { id: string; timestamp: string },
+  ) {
     console.log('Broadcasting notification', notification);
     this.server.emit('new_notification', notification);
   }

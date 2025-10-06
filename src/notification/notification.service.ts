@@ -11,6 +11,7 @@ export class NotificationService {
     const payload = {
       ...notification,
       id: randomUUID(),
+      timestamp: new Date().toISOString(),
     };
     this.notificationGateway.broadcastNotification(payload);
 
